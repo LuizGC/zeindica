@@ -1,0 +1,175 @@
+html{
+	margin: 0px;
+	padding: 0px;
+	@include contrasted(#66C3D0);
+	font-family: helvetica,tahoma,verdana,arial,sans-serif;  
+	font-size: 13px;
+  line-height: 18px;
+	line-height: 1.28;
+	text-rendering: optimizelegibility;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#notice {
+  color: green;
+}
+
+table.index{
+	 $table-color: #66C3D0;
+	 width: 100%;
+	 text-align: center;
+   @include alternating-rows-and-columns($table-color, adjust-hue($table-color, -80deg), #222222);
+}
+
+form{
+	padding: 2%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1;
+    margin: 1% 0 1% 0;
+		text-align: center;
+}
+
+a {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #005580;
+    text-decoration: underline;
+}
+
+a:visited {
+	 text-decoration: none;
+}
+
+.show_imagem{
+	width: 30%;
+}
+
+.field{
+	margin-bottom: 10px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.clear{
+	clear: both;
+	margin: 0%;
+	padding: 0%;
+}
+
+
+.content{
+	margin: 0% 0% 9% 0;
+	padding: 0%;
+	width: 100%;
+}
+
+p{
+	margin: 0 20% 1% 20%;
+	padding: 0px;
+	width: 60%;
+	font-size: 17px;
+	text-indent: 3%;
+	line-height:158%
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.menu{
+	position: fixed;
+	height: 20px;
+	width: 100%;
+	bottom:0;
+	z-index: 100;
+	@include opacity(0.4);
+	@include contrasted(#F8F8F8);
+	padding: 0%;
+	margin: 0%;
+}
+
+.menu:hover{
+	@include opacity(0.7);
+}
+
+.menu center{
+	margin: 3px;
+}
+
+.menu_admin{
+	font-size: 20px;
+}
+
+.main_footer{
+		position: fixed;
+		bottom: 0px;
+		z-index: 100;
+		width: 100%;
+}
+
+.humanMsg {
+	position: fixed;
+	top: 2px;
+	left: 25%;
+	width: 50%;
+	text-align: center; 
+	display: none;
+	color: white;
+	@include opacity(0.4);
+	z-index: 100000;
+	@include border-radius(4px);
+
+	p {
+		display: inline; 
+	}
+
+}
+
+.parceiros{
+	position: fixed;
+	right: 3%;
+	bottom: 5%;
+	width: 15%;
+	z-index: 101;
+	h4{
+		text-align: left;
+	}
+	img{
+		width: 100%;
+	}
+}

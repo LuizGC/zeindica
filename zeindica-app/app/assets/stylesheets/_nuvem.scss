@@ -1,0 +1,156 @@
+div.nuvem{
+	background: {
+      image: image-url("nuvem.png");
+      repeat: no-repeat;
+	};
+
+	@include background-size(100% 100%);
+	
+	cursor: pointer;
+
+	width: 31%;
+	margin: 1%;
+	padding: 0%;
+
+	float: left;
+
+	.imagem_nuvem{
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+div.nuvem:hover{
+	@include opacity(0.8);
+}
+
+.logo{
+	float: left;
+	width: 27%;
+	margin: 0 2% 0% 4%;
+	padding: 0%;
+}
+
+#premios.premio_before_show{
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+/*
+	margin de 10px para deixar espaço entre o logo e o canto superior
+	position static para que a imagem da montanha não fique pos cima da ultima nuvem.
+*/
+#premios.premio_after_show{
+	position: static;
+	margin: 10px 0 0 0;
+}
+
+
+.sausage-set{
+	display: none;	
+}
+
+#premios, .page{
+	margin: 0%;
+	padding: 0%;
+	width: 100%;
+}
+
+.ui-widget-overlay {
+    background-color: #66C3D0;
+    @include opacity(0.8);
+		left: 0;
+    position: fixed;
+    top: 0;
+		display: none;
+}
+
+.ui-dialog{ 
+	background-color: white;
+	@include box-sizing(border-box);
+	@include border-radius(15px);
+	@include box-shadow(#AAAAAA 5px 5px 15px);
+	position: fixed;
+	.ui-dialog-content{
+		margin: 0px;
+		padding: 10px;
+	}
+
+
+	.ui-dialog-titlebar{
+		background-color: #00A0E0;
+		margin: -2px 0 0 0;
+		padding: 4px 2px;
+		height: 30px;
+		@include border-top-radius(15px);
+		text-align: center;
+		
+		.ui-dialog-title{
+			width: 100%;
+			font-size: 140%;
+			font-weight: bold;
+			margin: 6px 0 0 0;
+			display: block;
+			color: white;
+		}
+		
+		.ui-dialog-titlebar-close{
+			position: absolute;
+    	width: 20px;
+			top:10px;
+			right:7px;
+			margin: 0px;
+			padding: 0px;
+			.ui-icon{
+				background: {
+   	   		image: image-url("close.png");
+  	    	repeat: no-repeat;
+				};
+				@include background-size(100% 100%);
+				margin: 0%;
+				padding: 0%;
+				display: block;
+				overflow: hidden;
+    		text-indent: -99999px;
+			}
+		}
+
+		.ui-dialog-titlebar-close:hover{
+			top:8px;
+			.ui-icon{
+    		width: 22px;
+				height: 22px;
+				@include opacity(0.8);
+			}
+		}
+
+	}
+}
+
+.info{
+	z-index: 1002;
+	.esq{
+		float: left;
+		width: 60%;
+	}
+	.dir{
+		float: right;
+		width: 40%;
+		a{
+			text-decoration: none;
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+
+	div{
+		margin: 0px;
+		padding: 0px;
+		img{
+			width: 100%;
+		}
+	}
+}

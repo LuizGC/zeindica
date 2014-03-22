@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuario: 
+  premio: 
+  premiado: false
+  depositado: false
+
+two:
+  usuario: 
+  premio: 
+  premiado: false
+  depositado: false

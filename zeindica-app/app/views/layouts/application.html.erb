@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zeindica - prêmios nas nuvens</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<script>
+	 <%= yield :javascript  %>
+   $(document).ready(function(){
+   	<%= yield :document_ready  %>
+   });
+</script>
+<body>
+<div class="content">
+	<%= yield %>
+</div>
+<%= image_tag "footer.png", :class => :main_footer%>
+<div class="parceiros">
+<h4>Parceiro:</h4>
+<%=link_to image_tag("cardapio.png"), "http://www.cardapioaqui.com/", :target => "_blank"%>
+</div>
+
+<div class="menu">
+		<center>
+			<%=link_to "Ze indica - prêmios nas nuvens", root_path%>
+			| <%=link_to "Contato", page_path("contato")%>
+			| <%=link_to "Termo de Uso", page_path("termo")%>
+ 			| <%=link_to "Privacidade", page_path("privacidade")%>
+ 			| <%=link_to "Sobre", page_path("sobre")%>
+		</center>
+</div>
+
+</body>
+</html>

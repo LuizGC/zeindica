@@ -1,0 +1,35 @@
+<h1>Listing premios</h1>
+
+<table class="index">
+<thead>
+  <tr>
+    <th>Nome</th>
+		<th>Empresa</th>
+    <th>Sorteio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+		<th></th>
+  </tr>
+</thead>
+
+<tbody>
+<% @premios.each do |premio| %>
+  <tr>
+    <td><%= premio.nome %></td>
+		<td><%= premio.empresa.nome %></td>
+    <td><%= premio.sorteio %></td>
+    <td><%= link_to 'Show', premio %></td>
+		<td><%= link_to 'Edit', edit_premio_path(premio) %></td>
+		<td><%= link_to 'Cupons', "/cupons/#{premio.id}" %></td>
+    <td><%= link_to 'Destroy', premio, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+
+</table>
+
+
+<br />
+
+<%= link_to 'New Premio', new_premio_path %>

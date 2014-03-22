@@ -1,0 +1,18 @@
+<%
+	if rand(10) < 3 
+		begin
+			current_usuario.facebook.feed!(
+				:message => "Estou concorrendo a um #{@cupom.premio.nome}. Participe também!", 
+				:picture => "", 
+				:link => "http://www.zeindica.com.br/",
+				:name => "Zé Indica - Prêmios nas Nuvens!",
+				:description => "A empresa #{@cupom.premio.empresa.nome} esta sorteando o prêmio #{@cupom.premio.nome}. Venha concorrer também.")
+		rescue Exception => e 
+		#fazer alguma coisa se o usuário não permitir publicar no mural
+		end
+	end
+%>
+
+
+$('.participar').html("Cupom depositado, boa sorte!");
+humanMsg.displayMsg('Você esta participando');

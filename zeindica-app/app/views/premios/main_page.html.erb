@@ -1,0 +1,37 @@
+<% content_for :document_ready do %>
+	
+	$(".nuvem").first().after("<%= escape_javascript(image_tag "logo.png",:class => :logo ) %>");
+
+
+	// o -10px é para quando o div premio virar static não saltar 10px para baixo
+	$("#premios").css("height", ($(window).height() - 10) + "px").slideToggle(4000, function(){
+			$("#premios").removeClass("premio_before_show").addClass("premio_after_show");
+	});
+	
+	infinite_scroll();
+	
+	<% if usuario_signed_in? %>
+		humanMsg.displayMsg('Você esta logado!');
+	<%end%>
+
+
+<%end%>
+
+<%#Verificar se o usuário não esta conectado%>
+<%content_for :javascript do%>
+	<% unless usuario_signed_in? %>
+			var facebook_link = $("<%=escape_javascript(link_to 'Facebook', '/auth/facebook/')%>");
+	<%else%>
+		var cupons_path = "<%=escape_javascript(cupons_path)%>"	
+		<%unless session[:premio_id].nil?%>
+			$.ajax_modal('/premios/<%=session[:premio_id]%>.json');
+		<%end%>
+	<%end%>
+<%end%>
+
+<div id='premios' class='premio_before_show'>
+	<div class='page'>
+    <%= render @premios %>
+	</div>
+</div>
+<div class="clear"></div>

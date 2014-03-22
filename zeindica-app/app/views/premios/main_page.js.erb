@@ -1,0 +1,3 @@
+<% if @premios.any?%>
+	$("#premios").append("<div class='page'><%= escape_javascript(render(@premios)) %></div>");
+<%end%>

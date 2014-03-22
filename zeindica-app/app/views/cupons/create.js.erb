@@ -1,0 +1,16 @@
+<%if usuario_signed_in? and @cupom and @cupom_sorteado.empty?%>
+
+$('.participar').html("Cupom gerado, ");
+$('.participar').append($("<%=escape_javascript(link_to "deposite", cupons_path, :method => :put,:remote => true, :class => :depositar)%>"));
+$('.participar').append("!");
+
+<%else if @cupom_sorteado.empty?%>
+		window.location.href= "<%=url_for '/auth/facebook/'%>";
+	<%else
+		cupom = @cupom_sorteado.first%>
+			$('.participar').html("Vencedor do sorteio foi ");
+			$('.participar').append($("<%=escape_javascript(link_to cupom.usuario.nome, cupom.usuario.facebook_link, :target => :_blank)%>"));
+			$('.participar').append("!");
+	<%end%>
+
+<%end%>

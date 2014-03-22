@@ -1,0 +1,62 @@
+<% content_for :document_ready do %>
+	
+	$("input").click(function(){
+		selecionar_cupom($(this).val());
+	});
+
+	$("button").click(function(){
+		var sorteado = parseInt($("input").length*Math.random()) + 1; 
+		var teve_sorteado = false;
+		$("input").each(function(){
+			if(!$(this).is(':disabled')){
+				if($(this).val() == sorteado){
+					selecionar_cupom($(this).val());
+					$(this).attr('checked', true);
+					teve_sorteado = true;
+					return false;
+				}
+			}
+		});
+		if(!teve_sorteado)
+			alert("Nenhum usuário sorteado, execute novamente.");
+	});
+
+<%end%>
+
+<% content_for :javascript do %>
+	
+	var selecionar_url = "<%= url_for "/cupom/selecionado/"%>";
+
+<%end%>
+
+<h1>Cupons</h1>
+
+Sorteio automático:  <button type="button">Sortear</button> 
+<table class="index">
+	<thead>
+  	<tr>
+			<th>Sorteado</th>
+    	<th>Usuario</th>
+			<th>Depositado</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @cupons.each do |cupom| %>
+ 			<tr>
+				<td>
+				<%if cupom.depositado%>
+					<%=radio_button("cupom", "premiado", cupom.id, :checked => cupom.premiado)%>
+				<%else%>
+					<input type="radio" disabled>
+				<%end%>
+				</td>
+    		<td><%= link_to cupom.usuario.nome, cupom.usuario.facebook_link, :target => :_blank %></td>
+				<td><%= cupom.depositado?%></td>
+  		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br />
+
+<%= link_to 'Back', premios_path %>

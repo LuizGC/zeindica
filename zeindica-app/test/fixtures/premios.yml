@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  descricao: MyText
+  sorteio: 2012-11-13
+  empresa_id: 1 
+
+two:
+  nome: MyString
+  descricao: MyText
+  sorteio: 2012-11-13
+  empresa_id: 2

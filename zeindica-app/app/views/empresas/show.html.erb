@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @empresa.nome %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%= @empresa.telefone %>
+</p>
+
+<p>
+  <b>Link para imagem topo:</b>
+  <%= @empresa.link_to_imagem_topo %>
+</p>
+
+<p>
+  <b>Imagem Topo:</b><br/>
+  <%= image_tag @empresa.imagem_topo.url, :class => :show_imagem  %>
+</p>
+
+<p>
+  <b>Link para imagem meio:</b>
+  <%= @empresa.link_to_imagem_meio %>
+</p>
+
+
+<p>
+  <b>Imagem Meio:</b><br/>
+  <%= image_tag @empresa.imagem_meio.url, :class => :show_imagem %>
+</p>
+
+<p>
+  <b>Link para imagem inferior:</b>
+  <%= @empresa.link_to_imagem_inferior %>
+</p>
+
+
+<p>
+  <b>Imagem Inferior:</b><br/>
+  <%= image_tag @empresa.imagem_inferior.url, :class => :show_imagem  %>
+</p>
+
+
+<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
+<%= link_to 'Back', empresas_path %>

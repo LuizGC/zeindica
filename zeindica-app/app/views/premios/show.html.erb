@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @premio.nome %>
+</p>
+
+<p>
+  <b>Empresa:</b>
+  <%= @premio.empresa.nome %>
+</p>
+
+<p>
+  <b>Sorteio:</b>
+  <%= @premio.sorteio %>
+</p>
+
+
+<p>
+  <b>Descricao:</b>
+  <%= @premio.descricao %>
+</p>
+
+<p>
+  <b>Imagem Nuvem:</b><br/>
+  <%= image_tag @premio.imagem_nuvem.url, :class => :show_imagem  %>
+</p>
+
+<p>
+  <b>Imagem Info:</b><br/>
+  <%= image_tag @premio.imagem_info.url, :class => :show_imagem %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_premio_path(@premio) %> |
+<%= link_to 'Back', premios_path %>

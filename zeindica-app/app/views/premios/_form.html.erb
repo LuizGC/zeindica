@@ -1,0 +1,41 @@
+<%= form_for(@premio, :html => { :multipart => true }) do |f| %>
+  <% if @premio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@premio.errors.count, "error") %> prohibited this premio from being saved:</h2>
+
+      <ul>
+      <% @premio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br />
+    <%= f.text_area :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :sorteio %><br />
+    <%= f.date_select :sorteio %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa_id %><br />
+    <%= collection_select(:premio, :empresa_id, Empresa.all, :id, :nome, :prompt => 'Selecione uma empresa') %>
+  </div>
+	<div>
+ 	 	<%= f.label :imagem_nuvem%><br />
+  	<%= f.file_field :imagem_nuvem %>
+	</div>
+	<div>
+ 	 	<%= f.label :imagem_info%><br />
+  	<%= f.file_field :imagem_info %>
+	</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
