@@ -1,0 +1,51 @@
+body{
+	background-color: #66C3D0;
+	margin: 0px 0px 100px 0px;
+	padding:0px;
+}
+
+.clear{
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+}
+
+img.page_id{
+  float: left;
+  margin: 1% 1% 0 2%;
+  padding: 0;
+  width: 31%;
+}
+
+img.nuvem{
+   cursor: pointer;
+   float: left;
+   margin: 2% 1%;
+   padding: 0;
+   width: 31%;
+}
+
+img.nuvem:hover{
+	opacity:0.4;
+}
+
+img.premio{
+	width: 31%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+img.premio{
+    left: 6px;
+    position: absolute;
+    top: 49px;
+    width: 31%;
+}
+
+img.footer{
+	position: fixed;
+	bottom: -20px;
+	left:0px;
+	width: 100%;
+}

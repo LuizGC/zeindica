@@ -1,0 +1,25 @@
+Geral
+
+1 - Entrar na página www.zeindica.com.br e ver a página com uma lista de prêmios.
+
+2 - O logo deve aparecer na primeira linha entre dois prêmios.
+
+3 - A partir da segunda os prêmios devem ser listados em 3 por linha. 
+
+4 - Quando o cursor passar pelo prêmio, realizar uma ação que sugestiona o usuário clicar na nuvem.
+
+5 - Ao clicar em um prêmio surgir uma tela pop up com informações sobre o prêmio, política de privacidade e empresa que doou o prêmio. 
+
+6 - Se o usuário não estiver conectado no facebook realizar a autenticação
+
+7 - Os prêmios devem ser cancelados sobre demanda quando o usuário desce a página (Twitter).
+
+Regras
+
+1 - O usuário pode gerar um cupon a cada 3 horas.
+
+2 - A ordem dos prêmios será realizada pela data do sorteio.
+
+3 - Quando um usuário ser sortiado enviar uma mensagem para o mural dele.
+
+4 - Regras de uso e privacidade aparecer em todo o site.
